@@ -1,0 +1,17 @@
+# Indirectly, we need the libraries/standard from this AWS SDK dependency for coreHTTP and coreMQTT
+# Having more of these files to be compiled into the project causes windows path length issues
+$(SEARCH_aws-iot-device-sdk-embedded-C)/libraries/3rdparty/
+$(SEARCH_aws-iot-device-sdk-embedded-C)/libraries/aws/
+$(SEARCH_aws-iot-device-sdk-embedded-C)/demos/
+$(SEARCH_aws-iot-device-sdk-embedded-C)/integration-test/
+$(SEARCH_aws-iot-device-sdk-embedded-C)/tools/
+$(SEARCH_aws-iot-device-sdk-embedded-C)/docs/
+$(SEARCH_aws-iot-device-sdk-port)/source/ota/
+
+$(SEARCH_CY8CKIT-028-EPD)
+$(SEARCH_CY8CKIT-028-SENSE)
+$(SEARCH_CY8CKIT-028-TFT)
+$(SEARCH_sensor-motion-bmi160)
+$(SEARCH_sensor-orientation-bmx160)
+$(SEARCH_BMI160_driver)
+$(SEARCH_BMM150-Sensor-API)

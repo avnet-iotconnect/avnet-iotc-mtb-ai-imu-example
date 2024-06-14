@@ -1,0 +1,47 @@
+{
+    "code": "psoc6mtb",
+    "name": "psoc6mtb",
+    "authType": 2,
+    "attributes": [
+        {
+            "name": "version",
+            "type": "STRING",
+            "description": "Version reported by the software",
+            "unit": null
+        },
+        {
+            "name": "random",
+            "type": "INTEGER",
+            "description": "A randomly generated integer",
+            "unit": null
+        }
+    ],
+    "commands": [
+        {
+            "name": "board-user-led",
+            "command": "board-user-led",
+            "requiredParam": true,
+            "requiredAck": false,
+            "isOTACommand": false
+        },
+        {
+            "name": "demo-mode",
+            "command": "demo-mode",
+            "requiredParam": true,
+            "requiredAck": false,
+            "isOTACommand": false
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "GMNA0JM",
+    "greenGrass": "0",
+    "wireless": "0",
+    "properties": {
+        "description": null,
+        "dataFrequency": "60",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
