@@ -83,10 +83,6 @@ static mtb_imu_data_t imu_data; // file scope so we can share last readout with 
 
 static bool is_demo_mode = false;
 
-#ifdef IOTC_OTA_SUPPORT
-static bool is_ota_in_progress = false;
-#endif
-
 static void on_connection_status(IotConnectConnectionStatus status) {
     // Add your own status handling
     switch (status) {
@@ -399,14 +395,6 @@ void app_task(void *pvParameters) {
 
     app_model_init();
 
-#if defined(IOTC_OTA_SUPPORT) && defined(OTA_USE_EXTERNAL_FLASH)
-    /* We need to init external flash */
-    iotc_ota_init();
-
-    /* Validate the update */
-    iotc_ota_storage_validated();
-#endif /* OTA_USE_EXTERNAL_FLASH */
-
     uint64_t hwuid = Cy_SysLib_GetUniqueId();
     uint32_t hwuidhi = (uint32_t)(hwuid >> 32);
     // not using low bytes in the name because they appear to be the same across all boards of the same type
@@ -485,12 +473,6 @@ void app_task(void *pvParameters) {
 
         int max_messages = is_demo_mode ? 6000 : 300;
         for (int j = 0; iotconnect_sdk_is_connected() && j < max_messages; j++) {
-#ifdef IOTC_OTA_SUPPORT
-            if (is_ota_in_progress == true) {
-                iotconnect_sdk_disconnect();
-                break;
-            }
-#endif
             printf("\n"); // to not mix output with Model Task
             cy_rslt_t result = publish_telemetry();
             if (result != CY_RSLT_SUCCESS) {
