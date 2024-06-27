@@ -1,0 +1,81 @@
+{
+    "code": "psoc6ai",
+    "name": "psoc6ai",
+    "authType": 2,
+    "attributes": [
+        {
+            "name": "version",
+            "type": "STRING",
+            "description": null,
+            "unit": null
+        },
+        {
+            "name": "class",
+            "type": "STRING",
+            "description": "Recognised AI class - standing, sitting, walking, jumping, unlabelled",
+            "unit": null
+        },
+        {
+            "name": "confidence",
+            "type": "INTEGER",
+            "description": "Confidence percentage for the recognised class",
+            "unit": null
+        },
+        {
+            "name": "accel",
+            "type": "OBJECT",
+            "description": null,
+            "childs": [
+                {
+                    "name": "x",
+                    "type": "DECIMAL",
+                    "description": "Accelerometer raw reading for X axis",
+                    "unit": null,
+                    "attributeColor": null
+                },
+                {
+                    "name": "y",
+                    "type": "DECIMAL",
+                    "description": "Accelerometer raw reading for Y axis",
+                    "unit": null,
+                    "attributeColor": null
+                },
+                {
+                    "name": "z",
+                    "type": "DECIMAL",
+                    "description": "Accelerometer raw reading for Z axis",
+                    "unit": null,
+                    "attributeColor": null
+                }
+            ]
+        }
+    ],
+    "commands": [
+        {
+            "name": "board-user-led",
+            "command": "board-user-led",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        },
+        {
+            "name": "demo-mode",
+            "command": "demo-mode",
+            "requiredParam": true,
+            "requiredAck": true,
+            "isOTACommand": false
+        }
+    ],
+    "messageVersion": "2.1",
+    "msgCode": "XG4EJRH",
+    "greenGrass": "0",
+    "wireless": "0",
+    "properties": {
+        "description": null,
+        "dataFrequency": "5",
+        "fileSupport": false
+    },
+    "_meta": {
+        "version": "2.0"
+    }
+}
