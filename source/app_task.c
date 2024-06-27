@@ -62,7 +62,6 @@
 
 #include "app_config.h"
 #include "app_task.h"
-#include "iotc_ota.h"
 
 
 #define APP_VERSION "02.01.00"
@@ -173,18 +172,7 @@ static void on_ota(IotclC2dEventData data) {
         printf("OTA resource is invalid.\r\n");
         return;
     }
-    printf("OTA download for https://%s%s.\n", ota_host, ota_path);
-
-#ifdef IOTC_OTA_SUPPORT
-        /* Start the OTA task */
-        if(iotc_ota_start(IOTCONNECT_CONNECTION_TYPE, ota_host, ota_path, NULL)) {
-            printf("OTA starts successfully.\r\n");
-            is_ota_in_progress = true;
-        } else {
-            printf("OTA starts unsuccessfully.\r\n");
-            is_ota_in_progress = false;
-        }
-#endif
+    printf("OTA download request received for https://%s%s, but it is not implemented.\n", ota_host, ota_path);
 }
 
 // returns success on matching the expected format. Returns is_on, assuming "on" for true, "off" for false

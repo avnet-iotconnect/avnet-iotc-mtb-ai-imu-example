@@ -160,27 +160,6 @@ endif
 # Custom configuration of mbedtls library.
 MBEDTLSFLAGS=MBEDTLS_USER_CONFIG_FILE='"mbedtls_user_config.h"'
 
-
-# Support IoTConnect OTA in the application along with Infineon's OTA components
-# This setting drives the behavior of this makefile
-OTA_SUPPORT=0
-
-ifeq ($(OTA_SUPPORT),1)
-##### OTA MAKEFILE MERGED FROM mtb-example-ota-https ######
-# Like COMPONENTS, but disable optional code that was enabled by default.
-ifneq ($(PLATFORM), XMC7200)
-DISABLE_COMPONENTS=CM0P_SLEEP CM0P_SECURE CM0P_CRYPTO CM0P_BLESS
-else
-DISABLE_COMPONENTS=XMC7xDUAL_CM0P_SLEEP XMC7x_CM0P_SLEEP
-endif
-##### END OTA MAKEFILE MERGED FROM mtb-example-ota-https ######
-endif # OTA_SUPPORT
-
-# The basic sample can support OTA, so enable the OTA code into the IoTConnect SDK
-ifeq ($(OTA_SUPPORT),1)
-DEFINES+=IOTC_OTA_SUPPORT
-endif
-
 # Turn off making tests for CJSON
 CJSONFLAGS=ENABLE_CJSON_TEST=Off ENABLE_CJSON_UTILS=Off
 
@@ -252,28 +231,6 @@ CXXFLAGS=
 # above.
 ASFLAGS=
 
-##### OTA MAKEFILE MERGED FROM mtb-example-ota-https ######
-# Additional / custom linker flags.
-ifeq ($(TOOLCHAIN), GCC_ARM)
-LDFLAGS=-Wl,--undefined=uxTopUsedPriority
-CY_TOOLCHAIN_LS_EXT=ld
-else
-ifeq ($(TOOLCHAIN), IAR)
-LDFLAGS=--keep uxTopUsedPriority
-CY_TOOLCHAIN_LS_EXT=icf
-else
-ifeq ($(TOOLCHAIN), ARM)
-LDFLAGS=--undefined=uxTopUsedPriority
-LDFLAGS+=--diag_suppress=L6314W
-CY_TOOLCHAIN_LS_EXT=sct
-else
-LDFLAGS=
-$(error Selected toolchain is not supported at this moment)
-endif
-endif
-endif
-##### OTA MAKEFILE MERGED FROM mtb-example-ota-https ######
-
 # Additional / custom libraries to link in to the application.
 LDLIBS=
 
@@ -292,115 +249,6 @@ PREBUILD+=$(SEARCH_sensor-orientation-bmx160)/bmx160_fix.bash "$(SEARCH_BMI160_d
 endif
 ##### END IMAGIMOB DEPLOY DEMO MAKEFILE MERGED FROM mtb-example-ml-imagimob-deploy ######
 
-
-###############################################################################
-#
-# OTA Setup
-#
-###############################################################################
-
-ifeq ($(OTA_SUPPORT),1)
-
-# Enable HTTP Support
-OTA_HTTP_SUPPORT=1
-
-# Set OTA platform type (added to defines and used when finding the linker script)
-# E.g. PSOC_062_2M, PSOC_062_512K and XMC7200
-OTA_PLATFORM=$(PLATFORM)
-
-# XIP_MODE only support for PSOC_062_512K platform
-XIP_MODE=XIP
-
-# Flashmap JSON file name
-ifneq ($(PLATFORM), XMC7200)
-ifeq ($(PLATFORM), PSOC_062_512K)
-ifeq ($(XIP_MODE), XIP)
-OTA_FLASH_MAP=flashmap/psoc62_512k_xip_swap_single.json
-LD_SUFFIX=_xip
-endif
-else
-OTA_FLASH_MAP=flashmap/psoc62_2m_ext_swap_single.json
-endif
-else
-OTA_FLASH_MAP=flashmap/xmc7200_int_swap_single.json
-endif
-
-ifneq ($(PLATFORM), XMC7200)
-# To enable QSPI support
-COMPONENTS+=OTA_PSOC_062
-endif
-
-# Starting from the 4.0 version of the ota-update library, the library is now fully separated from the MCUBootloader.
-# This means that it can function independently and work with any bootloader.
-# This code example only supports MCUboot at this moment.
-CY_BOOTLOADER=MCUBOOT
-COMPONENTS+=$(CY_BOOTLOADER)
-
-ifneq ($(CY_BOOTLOADER), MCUBOOT)
-$(error This code example only supports MCUboot based bootloader at this moment)
-endif
-
-# Set the version of the app using the following three variables.
-# This version information is passed to the Python module "imgtool" or "cysecuretools" while
-# signing the image in the post build step. Default values are set as follows.
-# Change the version here or over-ride by setting an environment variable
-# before building the application.
-#
-# export APP_VERSION_MAJOR=2
-#
-APP_VERSION_MAJOR?=1
-APP_VERSION_MINOR?=0
-APP_VERSION_BUILD?=0
-
-DEFINES+=OTA_SUPPORT=1\
-         APP_VERSION_MAJOR=$(APP_VERSION_MAJOR)\
-         APP_VERSION_MINOR=$(APP_VERSION_MINOR)\
-         APP_VERSION_BUILD=$(APP_VERSION_BUILD)
-
-# To enable the HTTP and secure socket logs.
-#OTA_HTTP_DEBUG=1
-#DEFINES+=OTA_HTTP_DEBUG=1
-# Disable custom config header file
-OTA_HTTP_USE_CUSTOM_CONFIG=0
-# Set user agent name in all request headers with the specified name
-OTA_HTTP_USER_AGENT_VALUE="\"ota-http-client\""
-# Configure response header maximum length with the specified value - HTTP
-OTA_HTTP_MAX_HDR_SIZE=2048
-
-DEFINES+=ENABLE_OTA_LOGS\
-         ENABLE_OTA_BOOTLOADER_ABSTRACTION_LOGS
-
-# Enable the CY_PYTHON_PATH requirement.
-CY_PYTHON_REQUIREMENT=true
-
-# Python path for ota-bootloader-abstraction middlewares.
-# Set Python path
-ifeq ($(CY_PYTHON_PATH),)
-ifeq ($(OS),Windows_NT)
-CY_PYTHON_PATH?=$(shell which python)
-else
-CY_PYTHON_PATH?=$(shell which python3)
-endif
-endif # checking for Python path
-
-# Build folder path for ota-bootloader-abstraction middleware.
-CY_BUILD_LOCATION=./build
-
-# Linker file path for ota-bootloader-abstraction middleware.
-OTA_LINKER_FILE=$(wildcard bsps/TARGET_$(TARGET)/COMPONENT_$(CORE)/TOOLCHAIN_$(TOOLCHAIN)/linker$(LD_SUFFIX).$(CY_TOOLCHAIN_LS_EXT))
-LINKER_SCRIPT=$(wildcard bsps/TARGET_$(TARGET)/COMPONENT_$(CORE)/TOOLCHAIN_$(TOOLCHAIN)/linker$(LD_SUFFIX).$(CY_TOOLCHAIN_LS_EXT))
-
-# Include the ota_update.mk and mcuboot_support.mk makefiles from the middlewares.
-ifneq ($(MAKECMDGOALS),getlibs)
-ifneq ($(MAKECMDGOALS),get_app_info)
-ifneq ($(MAKECMDGOALS),printlibs)
-    include ../mtb_shared/ota-update/*-v*/makefiles/ota_update.mk
-    include ../mtb_shared/ota-bootloader-abstraction/*-v*/makefiles/mcuboot/mcuboot_support.mk
-endif
-endif
-endif
-
-endif # OTA_SUPPORT
 
 ################################################################################
 # Paths
