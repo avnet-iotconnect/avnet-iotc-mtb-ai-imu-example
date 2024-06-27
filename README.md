@@ -1,8 +1,9 @@
 ## Introduction
 
-This project is based on several example projects:
-- Infineon [Machine learning: Imagimob model deployment](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/release-v1.1.0)
-- Avnet [IoTConnect Modus Toolbox&trade;](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/v6.0.0)
+This demo project is the integration of the 
+Infineon's [Machine learning: Imagimob model deployment](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/release-v1.1.0)
+and Avnet's [IoTConnect Modus Toolbox&trade; Basic Sample](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/v6.0.0)
+. It runs the Human Activity Detection AI algorithm and then AI model's recognized class is reported to IoTConnect.
 
 This project currently supports the [CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
 
@@ -20,32 +21,31 @@ and note the following limitations:
 
 ## Running the Demo
 
-Once the board connects to IoTConnect, it will start processing microphone input and attempt to detect a 
-baby crying sound. This cab be tested by placing the board next to the PC speakers and
-playing an audio file like [this one](https://www.youtube.com/watch?v=j3glwtXrj0c).
+See more on how to orient the board for detection at the
+Infineon's [Machine learning: Imagimob model deployment](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/release-v1.1.0) 
+README file. We recommend to plug the board into a power cell while testing.
 
-The application sends data once every second, but the AI model recognizes sounds several times
-per second. If at the time reporting data to IoTConnect the sound is:
- * not recognized - the **class** value will be reported as **unlabelled**
- * recognised as baby crying - the **class** value will be reported as **baby_cry**
+The application sends data once every second, but the AI model recognizes human activity several times
+per second. If at the time reporting data to IoTConnect the activity is not recognized, he **class** value will be reported as **unlabelled**.
+If the activity is reconginized, the **class** value will be reported as either:
+* sitting
+* standing
+* walking
+* walking
+* jumping
 
 The model will report different **confidence** percentages for each case, and the application will report
 the highest confidence class along with its confidence percentage.
 
+Along these values, the data will contain the raw accelerometer reading based on board's orientation and movement 
+as an object value **accel**, with **x**, **y** and **z** values.
 
-## Other Supported Boards and IMU
+## Other Supported Boards
 
 The project  can be modified to support the original Infineon's project supported boards along with the 
 [CY8CKIT-028-SENSE shield](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-028-sense/) and similar boards.
 If introducing support for those boards, please make note that [.cyignore](.cyignore) currently ignores shield files and 
 that CY_IGNORE logic in the makefile has no effect.
-
-The original Infineon's [Machine learning: Imagimob model deployment](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/release-v1.1.0)
-project supports both IMU and Audio (PDM) models. Only one model can be run at a time, but 
-the user can generate a different set of model files. While the original Infineon's project 
-comes with the precompiled IMU model and application, this project comes with the pre-generated
-PDM model and application. The application is written to support only the PDM model, but can be 
-modified to support both.
 
 
 
