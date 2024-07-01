@@ -14,10 +14,14 @@ The project supports only Eclipse with GCC_ARM compiler.
 
 To build the project, please refer to the 
 [IoTConnect Modus Toolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/v6.0.0/DEVELOPER_GUIDE.md) 
-and note the following limitations:
+and note the following:
+- Once Modus Toolbox has been installed, the 
+    [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning) 
+    software should be installed as well.
+- If using the model generator, you will need to install QEMU and set up the relevant environment variables
+    per [Machine Learning User Guide](https://www.infineon.com/dgdl/Infineon-Infineon-ModusToolbox_Machine_Learning_User_Guide-UserManual-v02_00-EN-UserManual-v09_00-EN.pdf?fileId=8ac78c8c83cd308101840de7e95a09df)
 - OTA is not supported.
 - Use the [psoc6aiimu-device-template.json Device Template](files/psoc6aiimu-device-template.json) instead of the Basic Sample's template.
-
 
 ## Running the Demo
 
