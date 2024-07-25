@@ -13,7 +13,7 @@ The project supports only Eclipse with GCC_ARM compiler.
 ## Building the Project
 
 To build the project, please refer to the 
-[IoTConnect Modus Toolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/v6.0.0/DEVELOPER_GUIDE.md) 
+[IoTConnect Modus Toolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/release-v6.0.0/DEVELOPER_GUIDE.md) 
 and note the following:
 - Once Modus Toolbox has been installed, the 
     [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning) 
