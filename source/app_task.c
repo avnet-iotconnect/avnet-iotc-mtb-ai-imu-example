@@ -82,6 +82,27 @@ static mtb_imu_data_t imu_data; // file scope so we can share last readout with 
 
 static bool is_demo_mode = false;
 
+typedef struct {
+    uint32_t count_unlabelled;
+    uint32_t count_standing;
+    uint32_t count_running;
+    uint32_t count_walking;
+    uint32_t count_sitting;
+    uint32_t count_jumping;
+} activity_counts_t;
+
+activity_counts_t activity_counts = {0};
+
+// Counters for class transmissions and stability check
+static uint32_t class_transmission_counter = 0;
+static const char* previous_class_label = NULL;
+static uint32_t stable_class_counter = 0;
+static const char* stable_class_label = NULL;
+
+// Default values for consecutive sends and stability checks
+static uint32_t consecutive_sends_required = 1;
+static uint32_t stability_count_required = 1;
+
 static void on_connection_status(IotConnectConnectionStatus status) {
     // Add your own status handling
     switch (status) {
@@ -205,9 +226,49 @@ static bool parse_on_off_command(const char* command, const char* name, bool *ar
     return false;
 }
 
+// Parses the command to set the number of consecutive sends
+static bool parse_set_consecutive_command(const char* command, const char* name, bool *arg_parsing_success, const char** message) {
+    *arg_parsing_success = false;
+    *message = NULL;
+    size_t name_len = strlen(name);
+    if (0 == strncmp(command, name, name_len)) {
+        int value = atoi(&command[name_len + 1]);
+        if (value > 0) {
+            consecutive_sends_required = value;
+            *arg_parsing_success = true;
+            *message = "Consecutive sends count updated";
+        } else {
+            *message = "Invalid value for consecutive sends count";
+        }
+        return true;
+    }
+    return false;
+}
+
+// Parses the command to set the stability count
+static bool parse_set_stability_command(const char* command, const char* name, bool *arg_parsing_success, const char** message) {
+    *arg_parsing_success = false;
+    *message = NULL;
+    size_t name_len = strlen(name);
+    if (0 == strncmp(command, name, name_len)) {
+        int value = atoi(&command[name_len + 1]);
+        if (value > 0) {
+            stability_count_required = value;
+            *arg_parsing_success = true;
+            *message = "Stability count updated";
+        } else {
+            *message = "Invalid value for stability count";
+        }
+        return true;
+    }
+    return false;
+}
+
 static void on_command(IotclC2dEventData data) {
     const char * const BOARD_STATUS_LED = "board-user-led";
     const char * const DEMO_MODE_CMD = "demo-mode";
+    const char * const SET_CONSECUTIVE_CMD = "set-consecutive";
+    const char * const SET_STABILITY_CMD = "set-stability";
     bool command_success = false;
     const char * message = NULL;
 
@@ -224,7 +285,11 @@ static void on_command(IotclC2dEventData data) {
             	 // Seems like logic is incerted in the BSP or initialization, so workaround here
                 cyhal_gpio_write(CYBSP_USER_LED, led_on ? CYBSP_LED_STATE_OFF : CYBSP_LED_STATE_ON);
             }
-        } else if (parse_on_off_command(command, DEMO_MODE_CMD,  &arg_parsing_success, &is_demo_mode, &message)) {
+        } else if (parse_on_off_command(command, DEMO_MODE_CMD, &arg_parsing_success, &is_demo_mode, &message)) {
+            command_success = arg_parsing_success;
+        } else if (parse_set_consecutive_command(command, SET_CONSECUTIVE_CMD, &arg_parsing_success, &message)) {
+            command_success = arg_parsing_success;
+        } else if (parse_set_stability_command(command, SET_STABILITY_CMD, &arg_parsing_success, &message)) {
             command_success = arg_parsing_success;
         } else {
             printf("Unknown command \"%s\"\n", command);
@@ -250,20 +315,47 @@ static void on_command(IotclC2dEventData data) {
 }
 
 static cy_rslt_t publish_telemetry(void) {
+    // Check if the current class has been stable enough
+    if (stable_class_label != NULL && strcmp(highest_confidence_label, stable_class_label) == 0) {
+        stable_class_counter++;
+    } else {
+        stable_class_counter = 1;
+        stable_class_label = highest_confidence_label;
+    }
+
+    if (stable_class_counter < stability_count_required) {
+        return CY_RSLT_SUCCESS;
+    }
+
+    // Check if the current class has been sent enough times
+    if (previous_class_label != NULL && strcmp(highest_confidence_label, previous_class_label) == 0) {
+        class_transmission_counter++;
+    } else {
+        class_transmission_counter = 1;
+        previous_class_label = highest_confidence_label;
+    }
+
+    if (class_transmission_counter < consecutive_sends_required) {
+        return CY_RSLT_SUCCESS;
+    }
+
+    // Reset the counter after sending the telemetry
+    class_transmission_counter = 0;
+
     IotclMessageHandle msg = iotcl_telemetry_create();
 
 #if defined(SENSE_SHIELDv1) || defined(SENSE_SHIELDv2)
-    		float accel_x = imu_data.accel.y / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_y = imu_data.accel.x / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_z = imu_data.accel.z / -(float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_x = imu_data.accel.y / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_y = imu_data.accel.x / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_z = imu_data.accel.z / -(float)IMU_MODEL_CONVERSION_FACTOR;
 #elif defined(EPD_SHIELD) || defined(TFT_SHIELD)
-			float accel_x = imu_data.accel.x / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_y = imu_data.accel.y / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_z = imu_data.accel.z / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_x = imu_data.accel.x / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_y = imu_data.accel.y / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_z = imu_data.accel.z / (float)IMU_MODEL_CONVERSION_FACTOR;
 #else
-			float accel_x = imu_data.sensor_data.acc.x / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_y = imu_data.sensor_data.acc.y / (float)IMU_MODEL_CONVERSION_FACTOR;
-			float accel_z = imu_data.sensor_data.acc.z / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_x = imu_data.sensor_data.acc.x / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_y = imu_data.sensor_data.acc.y / (float)IMU_MODEL_CONVERSION_FACTOR;
+    float accel_z = imu_data.sensor_data.acc.z / (float)IMU_MODEL_CONVERSION_FACTOR;
 #endif
 
     // Optional. The first time you create a data point, the current timestamp will be automatically added
@@ -276,8 +368,32 @@ static cy_rslt_t publish_telemetry(void) {
     iotcl_telemetry_set_number(msg, "accel.y", accel_y);
     iotcl_telemetry_set_number(msg, "accel.z", accel_z);
 
+    // Add class counts to the telemetry data
+    iotcl_telemetry_set_number(msg, "count_unlabelled", activity_counts.count_unlabelled);
+    iotcl_telemetry_set_number(msg, "count_standing", activity_counts.count_standing);
+    iotcl_telemetry_set_number(msg, "count_running", activity_counts.count_running);
+    iotcl_telemetry_set_number(msg, "count_walking", activity_counts.count_walking);
+    iotcl_telemetry_set_number(msg, "count_sitting", activity_counts.count_sitting);
+    iotcl_telemetry_set_number(msg, "count_jumping", activity_counts.count_jumping);
+
     iotcl_mqtt_send_telemetry(msg, false);
     iotcl_telemetry_destroy(msg);
+
+    // Increment class count only when the data is sent
+    if (strcmp(highest_confidence_label, "unlabelled") == 0) {
+        activity_counts.count_unlabelled++;
+    } else if (strcmp(highest_confidence_label, "standing") == 0) {
+        activity_counts.count_standing++;
+    } else if (strcmp(highest_confidence_label, "running") == 0) {
+        activity_counts.count_running++;
+    } else if (strcmp(highest_confidence_label, "walking") == 0) {
+        activity_counts.count_walking++;
+    } else if (strcmp(highest_confidence_label, "sitting") == 0) {
+        activity_counts.count_sitting++;
+    } else if (strcmp(highest_confidence_label, "jumping") == 0) {
+        activity_counts.count_jumping++;
+    }
+
     return CY_RSLT_SUCCESS;
 }
 
