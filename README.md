@@ -18,6 +18,7 @@ and note the following:
 - Once Modus Toolbox has been installed, the 
     [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning) 
     software should be installed as well.
+![Modus Guide](https://saleshosted.z13.web.core.windows.net/media/ifx/iotc-modus.gif)
 - If using the model generator, you will need to install QEMU and set up the relevant environment variables
     per [Machine Learning User Guide](https://www.infineon.com/dgdl/Infineon-Infineon-ModusToolbox_Machine_Learning_User_Guide-UserManual-v02_00-EN-UserManual-v09_00-EN.pdf?fileId=8ac78c8c83cd308101840de7e95a09df)
 - OTA is not supported.
