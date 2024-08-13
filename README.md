@@ -12,13 +12,14 @@ The project supports only Eclipse with GCC_ARM compiler.
 
 ## Building the Project
 
+[Wacth an Overview](https://saleshosted.z13.web.core.windows.net/media/ifx/videos/IFX%20Modus%20with%20IoTConnect.mp4) of creating a new project with IoTConnect in ModusToolbox.
+
 To build the project, please refer to the 
 [IoTConnect Modus Toolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/release-v6.0.0/DEVELOPER_GUIDE.md) 
 and note the following:
 - Once Modus Toolbox has been installed, the 
     [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning) 
     software should be installed as well.
-![Modus Guide](https://saleshosted.z13.web.core.windows.net/media/ifx/iotc-modus.gif)
 - If using the model generator, you will need to install QEMU and set up the relevant environment variables
     per [Machine Learning User Guide](https://www.infineon.com/dgdl/Infineon-Infineon-ModusToolbox_Machine_Learning_User_Guide-UserManual-v02_00-EN-UserManual-v09_00-EN.pdf?fileId=8ac78c8c83cd308101840de7e95a09df)
 - OTA is not supported.
