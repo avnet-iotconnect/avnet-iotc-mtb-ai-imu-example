@@ -9,16 +9,20 @@ This project currently supports the [CY8CKIT-062S2-AI](https://www.infineon.com/
 
 The project supports only Eclipse with GCC_ARM compiler.
 
+## Quickstart Guide
+
+If you wish to only evaluate this project, you can follow the [Quickstart Guide](QUICKSTART.md) to evaluate this application with IoTConnect.
+
 
 ## Building the Project
 
-[Wacth an Overview](https://saleshosted.z13.web.core.windows.net/media/ifx/videos/IFX%20Modus%20with%20IoTConnect.mp4) of creating a new project with IoTConnect in ModusToolbox.
+[Watch an Overview](https://saleshosted.z13.web.core.windows.net/media/ifx/videos/IFX%20Modus%20with%20IoTConnect.mp4) of creating a new project with IoTConnect in ModusToolbox.
 
-To build the project, please refer to the 
-[IoTConnect Modus Toolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/release-v6.0.0/DEVELOPER_GUIDE.md) 
+To build the project, please refer to the
+[IoTConnect ModusToolbox&trade; Basic Sample Developer Guide](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/release-v6.0.0/DEVELOPER_GUIDE.md)
 and note the following:
-- Once Modus Toolbox has been installed, the 
-    [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning) 
+- Once ModusToolbox has been installed, the
+    [ModusToolbox&trade; for Machine Learning](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxpackmachinelearning)
     software should be installed as well.
 - If using the model generator, you will need to install QEMU and set up the relevant environment variables
     per [Machine Learning User Guide](https://www.infineon.com/dgdl/Infineon-Infineon-ModusToolbox_Machine_Learning_User_Guide-UserManual-v02_00-EN-UserManual-v09_00-EN.pdf?fileId=8ac78c8c83cd308101840de7e95a09df)
@@ -48,9 +52,9 @@ as an object value **accel**, with **x**, **y** and **z** values.
 
 ## Other Supported Boards
 
-The project  can be modified to support the original Infineon's project supported boards along with the 
+The project  can be modified to support the original Infineon's project supported boards along with the
 [CY8CKIT-028-SENSE shield](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-028-sense/) and similar boards.
-If introducing support for those boards, please make note that [.cyignore](.cyignore) currently ignores shield files and 
+If introducing support for those boards, please make note that [.cyignore](.cyignore) currently ignores shield files and
 that CY_IGNORE logic in the makefile has no effect.
 
 
