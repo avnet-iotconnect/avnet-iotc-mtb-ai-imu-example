@@ -68,7 +68,7 @@
  * mbedtls_platform_gmtime_r() at compile-time by using the macro
  * MBEDTLS_PLATFORM_GMTIME_R_ALT.
  */
-#undef MBEDTLS_HAVE_TIME_DATE
+// #undef MBEDTLS_HAVE_TIME_DATE
 
 
 /**
@@ -571,7 +571,7 @@
  *
  * This module is the basis for creating X.509 certificates and CSRs.
  */
-#undef MBEDTLS_X509_CREATE_C
+// #undef MBEDTLS_X509_CREATE_C
 
 /**
  * \def MBEDTLS_X509_CSR_WRITE_C
@@ -597,7 +597,7 @@
  *
  * This module is required for X.509 certificate creation.
  */
-#undef MBEDTLS_X509_CRT_WRITE_C
+// #undef MBEDTLS_X509_CRT_WRITE_C
 
 /**
  * \def MBEDTLS_CERTS_C
@@ -998,12 +998,18 @@
  * other curve is enabled, need to disable the MBEDTLS_ECP_ALT.
  */
 
+/**
+ * Nik: Looking at the comments, it would appear that SECP256R1 should be hardware accelerated,
+ * but when we try to hook into it, the board freezes when printing the mbedtls generated certificates
+ * we must disable it for now and research further.
 #ifdef MBEDTLS_ECP_DP_SECP256R1_ENABLED
 #undef MBEDTLS_ECP_ALT
 #undef MBEDTLS_ECDH_GEN_PUBLIC_ALT
 #undef MBEDTLS_ECDSA_SIGN_ALT
 #undef MBEDTLS_ECDSA_VERIFY_ALT
 #endif
+ */
+
 #ifdef MBEDTLS_ECP_DP_SECP192K1_ENABLED
 #undef MBEDTLS_ECP_ALT
 #undef MBEDTLS_ECDH_GEN_PUBLIC_ALT

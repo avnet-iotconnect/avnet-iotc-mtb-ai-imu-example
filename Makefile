@@ -46,7 +46,7 @@ TARGET=APP_CY8CKIT-062S2-AI
 #
 # If APPNAME is edited, ensure to update or regenerate launch
 # configurations for your IDE.
-APPNAME=iotc-modustoolbox-example
+APPNAME=avnet-iotc-mtb-ai-imu-example
 
 # Name of toolchain to use. Options include:
 #
@@ -172,6 +172,11 @@ DEFINES+=ENABLE_HTTP_CLIENT_LOGS MQTT_DO_NOT_USE_CUSTOM_CONFIG
 DEFINES+=HTTP_DO_NOT_USE_CUSTOM_CONFIG
 # for sntp
 DEFINES+=SNTP_SERVER_DNS
+
+# Define to enable qualification code in the SDK
+# This define should NOT be used in production,
+# as it could make your device vulnerable to MITM attacks
+# DEFINES+=IOTC_AWS_DEVICE_QUALIFICATION
 
 # Configure response header maximum length with the specified value - HTTP
 DEFINES+=HTTP_MAX_RESPONSE_HEADERS_SIZE_BYTES=2048
