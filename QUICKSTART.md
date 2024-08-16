@@ -65,7 +65,7 @@ The Company ID (**CPID**) and Environment (**ENV**) variables identifying your I
 
 ## 9. Configure the Board
 
-> [!NOTE]  
+> [!IMPORTANT]  
 > There is no local echo in the serial terminal when typing or pasting values (unless you enabled this option in the TeraTerm settings).
 > If a mistake is made, the board must be reset and this section repeated.
 
@@ -85,7 +85,7 @@ The device will configure itself and reboot.
 
 The application will display the auto-generated certificate from flash upon boot.
 
-> [!WARNING]  
+> [!CAUTION]  
 > This certificate will be re-generated every time you re-flash the board because the flash section
 > where the certificate and private key are stored will be erased.
 > In this case, you will need to delete your device from IoTConnect and re-create the device with the new certificate.
