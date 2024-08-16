@@ -41,7 +41,7 @@ If the activity is reconginized, the **class** value will be reported as either:
 * sitting
 * standing
 * walking
-* walking
+* running
 * jumping
 
 The model will report different **confidence** percentages for each case, and the application will report
