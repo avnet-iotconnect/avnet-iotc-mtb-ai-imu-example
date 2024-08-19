@@ -45,7 +45,7 @@ Along with these values, the data will contain the raw accelerometer reading bas
 ## Additional Model Support
 
 To evaluate other Infineon/Imagimob models with IoTConnect, use the links below:
-* [Sound Classification (Baby Cryinog) Example](https://github.com/avnet-iotconnect/avnet-iotc-mtb-ai-baby-monitor/)
+* [Sound Classification (Baby Crying) Example](https://github.com/avnet-iotconnect/avnet-iotc-mtb-ai-baby-monitor/)
 
 ## Support for Infineon "IoT sense expansion kit"
 
