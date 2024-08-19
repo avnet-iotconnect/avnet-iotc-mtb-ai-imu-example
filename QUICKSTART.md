@@ -1,9 +1,8 @@
 ## 1. Introduction
-This document outlines the steps of setting up the Infineon [CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
-to run this application on IoTConnect.
+This document outlines the steps of setting up the Infineon PSoC™ 6 Artificial Intelligence Evaluation Kit [CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/) with IoTConnect to quickly and easily demonstrate the Imagimob IMU model.
 
 ## 2. Prerequisites
-This guide has been tested with the following environment, but should work with other operating systems.
+This guide has been tested with the following environment:
 * PC with Windows 10/11
 * USB-A to USB-C data cable
 * WiFi Network with Internet access
@@ -126,7 +125,7 @@ There will be errors displayed because the device still needs to be created in t
 ## 10. IoTConnect Device Template Setup
 
 An IoTConnect *Device Template* will need to be created or imported. This defines the data format the platform should expect from the device.
-* Download the premade  [Device Template](files/psoc6aiimu-device-template.json) (Right-click, Save As)
+* Download the premade  [Device Template](files/psoc6aiimu-device-template.json?raw=1) (**must** Right-Click the link, Save As)
 
 * **Click** the Device icon and the "Device" sub-menu:  
 <img src="https://github.com/avnet-iotconnect/avnet-iotc-mtb-xensiv-example/assets/40640041/57e0b0c8-08ba-4c3f-b33d-489d7d0db568" width=200>
@@ -162,15 +161,24 @@ An IoTConnect *Device Template* will need to be created or imported. This define
 
 * Switch back to the IoTConnect GUI in your browser and **Click** "Live Data" on the left Device menu and verify telemetry is being populated
 
-## 13. Visualize Data
+## 13. Create/Import a Dashboard
 The data can be visualized by using the Dynamic Dashboard feature of IoTConnect.  
-A preconfigured example dashboard is available here: [psoc6aiimu-example-dashboard.json](files/psoc6aiimu-example-dashboard.json) (Right-click, Save As)
+A preconfigured example dashboard is available here: [TBD-example-dashboard.json](files/TBD-example-dashboard.json?raw=1) (**must** Right-Click the link, Save As)
 
 * **Download** the template then select "Create Dashboard" from the top of the IoTConnect portal
-* **Select** the "Import Dashboard" option and **Select** the template and device name used previously 
+* **Select** the "Import Dashboard" option and **Select** the *Template* and *Device Name* used previously 
+* **Input** a name and complete the import
 
-Congratulations, your sample dashboard should look similar to the one below:  
-<img width="700" alt="xensiv_pasco2_dashboard_image" src="https://github.com/avnet-iotconnect/avnet-iotc-mtb-xensiv-example/assets/40640041/0d3047e4-bbe2-45a7-b959-88692919d4fa">
+You will now be in the dashboard edit mode. You can add/remove widgets or just click **Save** in the upper-right to exit the edit mode.
+The dashboard should similar to the one below:  
+<img width="700" alt="IMU_dashboard" src="files/TBD.png">
 
-## 14. Troubleshooting and Known Issues
-* The board may not be able to obtain time from the NTP server. Resetting the board should re-try the NTP connection and will likely succeed on the next try. 
+## 14. Using the Demo
+[TBD]
+
+## 15. Troubleshooting and Known Issues
+* The board may not be able to obtain time from the NTP server. Resetting the board should re-try the NTP connection and will likely succeed on the next try.
+
+## 16. Try More Examples
+Avnet as pre-enabled other Imagimob models to work with IoTConnect on this evaluation kit.  To flash a new model, use the link(s) below:
+* [Sound Classification (Baby Cry) Model Example](https://github.com/avnet-iotconnect/avnet-iotc-mtb-ai-baby-monitor)
