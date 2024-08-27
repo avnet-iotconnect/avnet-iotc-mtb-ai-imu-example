@@ -1,0 +1,24 @@
+Title:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/aiBanner.png 
+Standing:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/Standing.gif
+Walking:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/Walking.gif
+Jumping:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/Jumping.gif
+Running:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/Running.gif
+Sitting:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/Sitting.gif
+No Activity:  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/NoActivity.gif
+
+Board z-axis
+>- 0.5  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/psoc-top1.png
+> 0.5  https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/psoc-side.png
+<= 0.5 https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/psoc-bottom.png
+
+
+
+Running Goal:  
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/run1.png
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/run2.png
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/run3.png
+
+Walking Goal:  
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/walk1.png
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/walk2.png
+https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/walk3.png
