@@ -163,7 +163,7 @@ An IoTConnect *Device Template* will need to be created or imported. This define
 
 ## 13. Create/Import a Dashboard
 The data can be visualized by using the Dynamic Dashboard feature of IoTConnect.  
-A preconfigured example dashboard is available here: [TBD-example-dashboard.json](files/TBD-example-dashboard.json?raw=1) (**must** Right-Click the link, Save As)
+A preconfigured example dashboard is available here: [Dashboard_JSON_for_Import](https://raw.githubusercontent.com/avnet-iotconnect/avnet-iotc-mtb-ai-imu-example/main/files/imu-dashboard-export.json) (**must** Right-Click the link, Save As)
 
 * **Download** the template then select "Create Dashboard" from the top of the IoTConnect portal
 * **Select** the "Import Dashboard" option and **Select** the *Template* and *Device Name* used previously 
@@ -171,7 +171,7 @@ A preconfigured example dashboard is available here: [TBD-example-dashboard.json
 
 You will now be in the dashboard edit mode. You can add/remove widgets or just click **Save** in the upper-right to exit the edit mode.
 The dashboard should similar to the one below:  
-<img width="700" alt="IMU_dashboard" src="files/TBD.png">
+<img width="700" alt="IMU_dashboard" src="https://raw.githubusercontent.com/avnet-iotconnect/avnet-iotc-mtb-ai-imu-example/main/files/imu-dashboard-image.png">
 
 ## 14. Using the Demo
 [TBD]
