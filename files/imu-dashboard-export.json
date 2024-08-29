@@ -5,8 +5,8 @@
             "widgetGuid": "A8CB394D-15B1-42C9-94FC-AD7BDC599E2A",
             "widgetProperties": {
                 "i": "Image",
-                "background": "#000000",
-                "fontColor": "#343434",
+                "background": "#ffffff",
+                "fontColor": "#ffffff",
                 "fontFamily": "Proxima Nova",
                 "fontSize": "18",
                 "title": "",
@@ -18,22 +18,22 @@
                         "imageDevice": "false",
                         "imageTelemetry": "false",
                         "key": "option",
-                        "position": "center"
+                        "position": "stretch"
                     },
                     "upload": {
                         "imageurl": "",
                         "key": "upload"
                     },
                     "url": {
-                        "imageurl": "https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/aiBanner.png ",
+                        "imageurl": "https://saleshosted.z13.web.core.windows.net/media/ifx/psoc6AI/imu_-title2.png",
                         "key": "url"
                     },
                     "device": {
-                        "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
+                        "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
                         "deviceName": "",
                         "imageurl": "",
                         "key": "device",
-                        "deviceUniqueId": "psoc6-imu-f5af350e"
+                        "deviceUniqueId": "psoc6-imu-f5af261f"
                     },
                     "telemetry": {
                         "deviceGuid": "",
@@ -46,8 +46,8 @@
             "properties": {
                 "x": "0",
                 "y": "0",
-                "w": "56",
-                "h": "7",
+                "w": "47",
+                "h": "6",
                 "i": "Image",
                 "minW": "5",
                 "minH": "5",
@@ -58,8 +58,8 @@
             "widgetGuid": "6FEFF6B7-15C4-4095-A156-87A1B38D2FF5",
             "widgetProperties": {
                 "i": "Transformation",
-                "background": "#000000",
-                "fontColor": "#000000",
+                "background": "#dfe0e1",
+                "fontColor": "#dfe0e1",
                 "fontFamily": "Proxima Nova",
                 "fontSize": "10",
                 "title": "Transformation",
@@ -67,130 +67,70 @@
                 "contents": {
                     "Transformation": {
                         "device": {
-                            "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
-                            "deviceUniqueId": "psoc6-imu-f5af350e"
+                            "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
+                            "deviceUniqueId": "psoc6-imu-f5af261f"
                         },
                         "attributes": {
                             "attribute": [
                                 {
-                                    "attributeGuid": "8FF02683-D770-405A-A5B0-1F5ABBC5C92D",
-                                    "attributeName": "class",
-                                    "checked": "true",
-                                    "dataType": "STRING",
-                                    "attributeLatestValue": "walking",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "walking"
-                                },
-                                {
-                                    "attributeGuid": "E5AF28B7-D352-455C-8D33-4F51F3B5C344",
-                                    "attributeName": "count_unlabelled",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
-                                },
-                                {
-                                    "attributeGuid": "660585B1-446F-4EDD-B16E-5595FBF0D38F",
-                                    "attributeName": "accel.z",
-                                    "checked": "false",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.8176270",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.8176270"
-                                },
-                                {
-                                    "attributeGuid": "A4808CB1-15C2-42E0-A4C1-5ED9D6968907",
+                                    "attributeGuid": "F1DA37DD-F132-40EF-9687-114F07A0AEFD",
                                     "attributeName": "confidence",
                                     "checked": "false",
                                     "dataType": "INTEGER",
-                                    "attributeLatestValue": "78",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
+                                    "attributeLatestValue": "97",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "78"
+                                    "attributeValue": "97"
                                 },
                                 {
-                                    "attributeGuid": "06349B70-5A38-4C90-86E7-846865668FB2",
-                                    "attributeName": "count_jumping",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
-                                },
-                                {
-                                    "attributeGuid": "B3D937B3-459A-41B6-B7E7-A6A58F50C7D2",
-                                    "attributeName": "count_running",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
-                                },
-                                {
-                                    "attributeGuid": "37F49E49-8040-4DA3-B2A4-AE5FBC0F3D03",
+                                    "attributeGuid": "BDEF272F-1A70-433D-B661-61A265F6D33B",
                                     "attributeName": "accel.y",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.5778809",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
+                                    "attributeLatestValue": "-0.9394531",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.5778809"
+                                    "attributeValue": "-0.9394531"
                                 },
                                 {
-                                    "attributeGuid": "986374B0-DF1B-4EEC-A5BE-C348199D2ED8",
-                                    "attributeName": "count_walking",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
-                                },
-                                {
-                                    "attributeGuid": "A2678D86-E615-4A86-A4E2-CA1746992E7E",
+                                    "attributeGuid": "5BD164B0-37AB-4752-91E5-9167089BBF7A",
                                     "attributeName": "version",
                                     "checked": "false",
                                     "dataType": "STRING",
                                     "attributeLatestValue": "03.00.00",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
                                     "attributeValue": "03.00.00"
                                 },
                                 {
-                                    "attributeGuid": "AED34EA9-D7BD-48F1-9A03-CA8CD761A77A",
-                                    "attributeName": "count_standing",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
+                                    "attributeGuid": "1D49B6C2-0D34-4676-953B-B6CDEA27CCFE",
+                                    "attributeName": "class",
+                                    "checked": "true",
+                                    "dataType": "STRING",
+                                    "attributeLatestValue": "standing",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
+                                    "attributeValue": "standing"
                                 },
                                 {
-                                    "attributeGuid": "21034CD3-AE2D-48B4-83BB-DBF6CF55EFD0",
-                                    "attributeName": "count_sitting",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "",
-                                    "deviceUpdatedDate": "2024-08-27T05:04:23.170Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "NA"
-                                },
-                                {
-                                    "attributeGuid": "B0CF561A-BA77-4F19-A827-DD98597F2BDB",
+                                    "attributeGuid": "C0096208-A496-44A8-A6B2-C25A2CFF2CB4",
                                     "attributeName": "accel.x",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "-0.0383301",
-                                    "deviceUpdatedDate": "2024-08-27T05:37:31.663Z",
+                                    "attributeLatestValue": "-0.0056152",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "-0.0383301"
+                                    "attributeValue": "-0.0056152"
+                                },
+                                {
+                                    "attributeGuid": "0129DE05-4E5F-4D9C-B07F-FEB5B353EAFE",
+                                    "attributeName": "accel.z",
+                                    "checked": "false",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "0.3637695",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "0.3637695"
                                 }
                             ]
                         },
@@ -245,7 +185,7 @@
             },
             "properties": {
                 "x": "0",
-                "y": "7",
+                "y": "6",
                 "w": "25",
                 "h": "11",
                 "i": "Transformation",
@@ -267,8 +207,8 @@
                 "contents": {
                     "gauge": {
                         "device": {
-                            "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
-                            "deviceUniqueId": "psoc6-imu-f5af350e"
+                            "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
+                            "deviceUniqueId": "psoc6-imu-f5af261f"
                         },
                         "attributes": {
                             "attribute": [
@@ -403,7 +343,7 @@
             },
             "properties": {
                 "x": "25",
-                "y": "7",
+                "y": "6",
                 "w": "11",
                 "h": "11",
                 "i": "gauge",
@@ -418,8 +358,8 @@
             "widgetGuid": "6FEFF6B7-15C4-4095-A156-87A1B38D2FF5",
             "widgetProperties": {
                 "i": "Transformation",
-                "background": "#000000",
-                "fontColor": "#000000",
+                "background": "#dfe0e1",
+                "fontColor": "#dfe0e1",
                 "fontFamily": "Proxima Nova",
                 "fontSize": "10",
                 "title": "Transformation",
@@ -427,130 +367,70 @@
                 "contents": {
                     "Transformation": {
                         "device": {
-                            "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
-                            "deviceUniqueId": "psoc6-imu-f5af350e"
+                            "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
+                            "deviceUniqueId": "psoc6-imu-f5af261f"
                         },
                         "attributes": {
                             "attribute": [
                                 {
-                                    "attributeGuid": "8FF02683-D770-405A-A5B0-1F5ABBC5C92D",
-                                    "attributeName": "class",
-                                    "checked": "false",
-                                    "dataType": "STRING",
-                                    "attributeLatestValue": "walking",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "walking"
-                                },
-                                {
-                                    "attributeGuid": "E5AF28B7-D352-455C-8D33-4F51F3B5C344",
-                                    "attributeName": "count_unlabelled",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "33",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "33"
-                                },
-                                {
-                                    "attributeGuid": "660585B1-446F-4EDD-B16E-5595FBF0D38F",
-                                    "attributeName": "accel.z",
-                                    "checked": "true",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.2978516",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.2978516"
-                                },
-                                {
-                                    "attributeGuid": "A4808CB1-15C2-42E0-A4C1-5ED9D6968907",
+                                    "attributeGuid": "F1DA37DD-F132-40EF-9687-114F07A0AEFD",
                                     "attributeName": "confidence",
                                     "checked": "false",
                                     "dataType": "INTEGER",
-                                    "attributeLatestValue": "93",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
+                                    "attributeLatestValue": "97",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "93"
+                                    "attributeValue": "97"
                                 },
                                 {
-                                    "attributeGuid": "06349B70-5A38-4C90-86E7-846865668FB2",
-                                    "attributeName": "count_jumping",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "16",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "16"
-                                },
-                                {
-                                    "attributeGuid": "B3D937B3-459A-41B6-B7E7-A6A58F50C7D2",
-                                    "attributeName": "count_running",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "16",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "16"
-                                },
-                                {
-                                    "attributeGuid": "37F49E49-8040-4DA3-B2A4-AE5FBC0F3D03",
+                                    "attributeGuid": "BDEF272F-1A70-433D-B661-61A265F6D33B",
                                     "attributeName": "accel.y",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.53125",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
+                                    "attributeLatestValue": "-0.9394531",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.53125"
+                                    "attributeValue": "-0.9394531"
                                 },
                                 {
-                                    "attributeGuid": "986374B0-DF1B-4EEC-A5BE-C348199D2ED8",
-                                    "attributeName": "count_walking",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "54",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "54"
-                                },
-                                {
-                                    "attributeGuid": "A2678D86-E615-4A86-A4E2-CA1746992E7E",
+                                    "attributeGuid": "5BD164B0-37AB-4752-91E5-9167089BBF7A",
                                     "attributeName": "version",
                                     "checked": "false",
                                     "dataType": "STRING",
-                                    "attributeLatestValue": "02.01.00",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
+                                    "attributeLatestValue": "03.00.00",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "02.01.00"
+                                    "attributeValue": "03.00.00"
                                 },
                                 {
-                                    "attributeGuid": "AED34EA9-D7BD-48F1-9A03-CA8CD761A77A",
-                                    "attributeName": "count_standing",
+                                    "attributeGuid": "1D49B6C2-0D34-4676-953B-B6CDEA27CCFE",
+                                    "attributeName": "class",
                                     "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "2909",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
+                                    "dataType": "STRING",
+                                    "attributeLatestValue": "standing",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "2909"
+                                    "attributeValue": "standing"
                                 },
                                 {
-                                    "attributeGuid": "21034CD3-AE2D-48B4-83BB-DBF6CF55EFD0",
-                                    "attributeName": "count_sitting",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "68",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "68"
-                                },
-                                {
-                                    "attributeGuid": "B0CF561A-BA77-4F19-A827-DD98597F2BDB",
+                                    "attributeGuid": "C0096208-A496-44A8-A6B2-C25A2CFF2CB4",
                                     "attributeName": "accel.x",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "-0.7810059",
-                                    "deviceUpdatedDate": "2024-08-06T01:58:42.993Z",
+                                    "attributeLatestValue": "-0.0056152",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "-0.7810059"
+                                    "attributeValue": "-0.0056152"
+                                },
+                                {
+                                    "attributeGuid": "0129DE05-4E5F-4D9C-B07F-FEB5B353EAFE",
+                                    "attributeName": "accel.z",
+                                    "checked": "true",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "0.3637695",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "0.3637695"
                                 }
                             ]
                         },
@@ -584,7 +464,7 @@
             },
             "properties": {
                 "x": "36",
-                "y": "7",
+                "y": "6",
                 "w": "11",
                 "h": "11",
                 "i": "Transformation",
@@ -594,118 +474,34 @@
             }
         },
         {
-            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
+            "widgetGuid": "E413CDFD-54EB-465E-BA97-CE610867E440",
             "widgetProperties": {
-                "i": "HyperLink",
-                "background": "#337dba",
+                "i": "DeviceCommand",
+                "background": "#dfe0e1",
                 "fontColor": "#000000",
                 "fontFamily": "Proxima Nova",
-                "fontSize": "24",
-                "title": "Get Started: AI",
-                "titleAlign": "center",
+                "fontSize": "18",
+                "title": "Device Commands",
+                "titleAlign": "",
                 "contents": {
-                    "hyperlink": {
-                        "link": "https://www.infineon.com/cms/en/product/promopages/get-started-with-AI/",
-                        "key": "hyperlink"
+                    "deviceCommand": {
+                        "template": "5B2E84D4-2C2A-4043-B7BF-0F5826F8B188",
+                        "device": "psoc6-imu-f5af261f",
+                        "key": "deviceCommand",
+                        "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A"
                     }
                 }
             },
             "properties": {
-                "x": "47",
-                "y": "7",
-                "w": "10",
-                "h": "2",
-                "i": "HyperLink",
-                "minW": "5",
-                "minH": "2",
-                "maxH": "2",
-                "isStatic": "false"
-            }
-        },
-        {
-            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
-            "widgetProperties": {
-                "i": "HyperLink",
-                "background": "#337dba",
-                "fontColor": "#000000",
-                "fontFamily": "Proxima Nova",
-                "fontSize": "24",
-                "title": "CY8CKIT-062S2-AI",
-                "titleAlign": "center",
-                "contents": {
-                    "hyperlink": {
-                        "link": "https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/",
-                        "key": "hyperlink"
-                    }
-                }
-            },
-            "properties": {
-                "x": "47",
-                "y": "9",
-                "w": "10",
-                "h": "2",
-                "i": "HyperLink",
-                "minW": "5",
-                "minH": "2",
-                "maxH": "2",
-                "isStatic": "false"
-            }
-        },
-        {
-            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
-            "widgetProperties": {
-                "i": "HyperLink",
-                "background": "#41c363",
-                "fontColor": "#000000",
-                "fontFamily": "Proxima Nova",
-                "fontSize": "24",
-                "title": "Github Repo",
-                "titleAlign": "center",
-                "contents": {
-                    "hyperlink": {
-                        "link": "https://github.com/avnet-iotconnect/avnet-iotc-mtb-ai-imu-example",
-                        "key": "hyperlink"
-                    }
-                }
-            },
-            "properties": {
-                "x": "47",
-                "y": "11",
-                "w": "10",
-                "h": "2",
-                "i": "HyperLink",
-                "minW": "5",
-                "minH": "2",
-                "maxH": "2",
-                "isStatic": "false"
-            }
-        },
-        {
-            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
-            "widgetProperties": {
-                "i": "HyperLink",
-                "background": "#41c363",
-                "fontColor": "#000000",
-                "fontFamily": "Proxima Nova",
-                "fontSize": "24",
-                "title": "IoTConnect",
-                "titleAlign": "center",
-                "contents": {
-                    "hyperlink": {
-                        "link": "https://www.iotconnect.io",
-                        "key": "hyperlink"
-                    }
-                }
-            },
-            "properties": {
-                "x": "47",
-                "y": "13",
-                "w": "10",
-                "h": "2",
-                "i": "HyperLink",
-                "minW": "5",
-                "minH": "2",
-                "maxH": "2",
+                "x": "0",
+                "y": "17",
+                "w": "25",
+                "h": "10",
+                "i": "DeviceCommand",
+                "minW": "22",
+                "minH": "10",
+                "maxH": "20",
+                "maxW": "35",
                 "isStatic": "false"
             }
         },
@@ -730,130 +526,70 @@
                     },
                     "live": {
                         "device": {
-                            "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
-                            "deviceUniqueId": "psoc6-imu-f5af350e"
+                            "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
+                            "deviceUniqueId": "psoc6-imu-f5af261f"
                         },
                         "attributes": {
                             "attribute": [
                                 {
-                                    "attributeGuid": "8FF02683-D770-405A-A5B0-1F5ABBC5C92D",
+                                    "attributeGuid": "F1DA37DD-F132-40EF-9687-114F07A0AEFD",
+                                    "attributeName": "confidence",
+                                    "checked": "false",
+                                    "dataType": "INTEGER",
+                                    "attributeLatestValue": "97",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "97"
+                                },
+                                {
+                                    "attributeGuid": "BDEF272F-1A70-433D-B661-61A265F6D33B",
+                                    "attributeName": "accel.y",
+                                    "checked": "false",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "-0.9394531",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "-0.9394531"
+                                },
+                                {
+                                    "attributeGuid": "5BD164B0-37AB-4752-91E5-9167089BBF7A",
+                                    "attributeName": "version",
+                                    "checked": "false",
+                                    "dataType": "STRING",
+                                    "attributeLatestValue": "03.00.00",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "03.00.00"
+                                },
+                                {
+                                    "attributeGuid": "1D49B6C2-0D34-4676-953B-B6CDEA27CCFE",
                                     "attributeName": "class",
                                     "checked": "true",
                                     "dataType": "STRING",
                                     "attributeLatestValue": "standing",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
                                     "attributeValue": "standing"
                                 },
                                 {
-                                    "attributeGuid": "E5AF28B7-D352-455C-8D33-4F51F3B5C344",
-                                    "attributeName": "count_unlabelled",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "660585B1-446F-4EDD-B16E-5595FBF0D38F",
-                                    "attributeName": "accel.z",
-                                    "checked": "false",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.9689941",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.9689941"
-                                },
-                                {
-                                    "attributeGuid": "A4808CB1-15C2-42E0-A4C1-5ED9D6968907",
-                                    "attributeName": "confidence",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "49",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "49"
-                                },
-                                {
-                                    "attributeGuid": "06349B70-5A38-4C90-86E7-846865668FB2",
-                                    "attributeName": "count_jumping",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "B3D937B3-459A-41B6-B7E7-A6A58F50C7D2",
-                                    "attributeName": "count_running",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "37F49E49-8040-4DA3-B2A4-AE5FBC0F3D03",
-                                    "attributeName": "accel.y",
-                                    "checked": "false",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "-0.2355957",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "-0.2355957"
-                                },
-                                {
-                                    "attributeGuid": "986374B0-DF1B-4EEC-A5BE-C348199D2ED8",
-                                    "attributeName": "count_walking",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "A2678D86-E615-4A86-A4E2-CA1746992E7E",
-                                    "attributeName": "version",
-                                    "checked": "false",
-                                    "dataType": "STRING",
-                                    "attributeLatestValue": "02.01.00",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "02.01.00"
-                                },
-                                {
-                                    "attributeGuid": "AED34EA9-D7BD-48F1-9A03-CA8CD761A77A",
-                                    "attributeName": "count_standing",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "1406",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "1406"
-                                },
-                                {
-                                    "attributeGuid": "21034CD3-AE2D-48B4-83BB-DBF6CF55EFD0",
-                                    "attributeName": "count_sitting",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "B0CF561A-BA77-4F19-A827-DD98597F2BDB",
+                                    "attributeGuid": "C0096208-A496-44A8-A6B2-C25A2CFF2CB4",
                                     "attributeName": "accel.x",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.1408691",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
+                                    "attributeLatestValue": "-0.0056152",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.1408691"
+                                    "attributeValue": "-0.0056152"
+                                },
+                                {
+                                    "attributeGuid": "0129DE05-4E5F-4D9C-B07F-FEB5B353EAFE",
+                                    "attributeName": "accel.z",
+                                    "checked": "false",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "0.3637695",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "0.3637695"
                                 }
                             ]
                         },
@@ -863,14 +599,72 @@
                 }
             },
             "properties": {
-                "x": "0",
-                "y": "18",
-                "w": "10",
+                "x": "25",
+                "y": "17",
+                "w": "11",
                 "h": "4",
                 "i": "Live",
                 "minW": "7",
                 "minH": "4",
                 "maxH": "4",
+                "isStatic": "false"
+            }
+        },
+        {
+            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
+            "widgetProperties": {
+                "i": "HyperLink",
+                "background": "#337dba",
+                "fontColor": "#ffffff",
+                "fontFamily": "Proxima Nova",
+                "fontSize": "24",
+                "title": "Get Started: AI",
+                "titleAlign": "center",
+                "contents": {
+                    "hyperlink": {
+                        "link": "https://www.infineon.com/cms/en/product/promopages/get-started-with-AI/",
+                        "key": "hyperlink"
+                    }
+                }
+            },
+            "properties": {
+                "x": "36",
+                "y": "17",
+                "w": "11",
+                "h": "2",
+                "i": "HyperLink",
+                "minW": "5",
+                "minH": "2",
+                "maxH": "2",
+                "isStatic": "false"
+            }
+        },
+        {
+            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
+            "widgetProperties": {
+                "i": "HyperLink",
+                "background": "#337dba",
+                "fontColor": "#ffffff",
+                "fontFamily": "Proxima Nova",
+                "fontSize": "24",
+                "title": "CY8CKIT-062S2-AI",
+                "titleAlign": "center",
+                "contents": {
+                    "hyperlink": {
+                        "link": "https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/",
+                        "key": "hyperlink"
+                    }
+                }
+            },
+            "properties": {
+                "x": "36",
+                "y": "19",
+                "w": "11",
+                "h": "2",
+                "i": "HyperLink",
+                "minW": "5",
+                "minH": "2",
+                "maxH": "2",
                 "isStatic": "false"
             }
         },
@@ -895,130 +689,70 @@
                     },
                     "live": {
                         "device": {
-                            "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5",
-                            "deviceUniqueId": "psoc6-imu-f5af350e"
+                            "deviceGuid": "9BFA4E7E-F76D-457D-B912-19CBFFEE012A",
+                            "deviceUniqueId": "psoc6-imu-f5af261f"
                         },
                         "attributes": {
                             "attribute": [
                                 {
-                                    "attributeGuid": "8FF02683-D770-405A-A5B0-1F5ABBC5C92D",
+                                    "attributeGuid": "F1DA37DD-F132-40EF-9687-114F07A0AEFD",
+                                    "attributeName": "confidence",
+                                    "checked": "false",
+                                    "dataType": "INTEGER",
+                                    "attributeLatestValue": "97",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "97"
+                                },
+                                {
+                                    "attributeGuid": "BDEF272F-1A70-433D-B661-61A265F6D33B",
+                                    "attributeName": "accel.y",
+                                    "checked": "false",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "-0.9394531",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "-0.9394531"
+                                },
+                                {
+                                    "attributeGuid": "5BD164B0-37AB-4752-91E5-9167089BBF7A",
+                                    "attributeName": "version",
+                                    "checked": "true",
+                                    "dataType": "STRING",
+                                    "attributeLatestValue": "03.00.00",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "03.00.00"
+                                },
+                                {
+                                    "attributeGuid": "1D49B6C2-0D34-4676-953B-B6CDEA27CCFE",
                                     "attributeName": "class",
                                     "checked": "false",
                                     "dataType": "STRING",
                                     "attributeLatestValue": "standing",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
                                     "attributeValue": "standing"
                                 },
                                 {
-                                    "attributeGuid": "E5AF28B7-D352-455C-8D33-4F51F3B5C344",
-                                    "attributeName": "count_unlabelled",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "660585B1-446F-4EDD-B16E-5595FBF0D38F",
-                                    "attributeName": "accel.z",
-                                    "checked": "false",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.9689941",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.9689941"
-                                },
-                                {
-                                    "attributeGuid": "A4808CB1-15C2-42E0-A4C1-5ED9D6968907",
-                                    "attributeName": "confidence",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "49",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "49"
-                                },
-                                {
-                                    "attributeGuid": "06349B70-5A38-4C90-86E7-846865668FB2",
-                                    "attributeName": "count_jumping",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "B3D937B3-459A-41B6-B7E7-A6A58F50C7D2",
-                                    "attributeName": "count_running",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "37F49E49-8040-4DA3-B2A4-AE5FBC0F3D03",
-                                    "attributeName": "accel.y",
-                                    "checked": "false",
-                                    "dataType": "DECIMAL",
-                                    "attributeLatestValue": "-0.2355957",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "-0.2355957"
-                                },
-                                {
-                                    "attributeGuid": "986374B0-DF1B-4EEC-A5BE-C348199D2ED8",
-                                    "attributeName": "count_walking",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "A2678D86-E615-4A86-A4E2-CA1746992E7E",
-                                    "attributeName": "version",
-                                    "checked": "true",
-                                    "dataType": "STRING",
-                                    "attributeLatestValue": "02.01.00",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "02.01.00"
-                                },
-                                {
-                                    "attributeGuid": "AED34EA9-D7BD-48F1-9A03-CA8CD761A77A",
-                                    "attributeName": "count_standing",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "1406",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "1406"
-                                },
-                                {
-                                    "attributeGuid": "21034CD3-AE2D-48B4-83BB-DBF6CF55EFD0",
-                                    "attributeName": "count_sitting",
-                                    "checked": "false",
-                                    "dataType": "INTEGER",
-                                    "attributeLatestValue": "0",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
-                                    "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0"
-                                },
-                                {
-                                    "attributeGuid": "B0CF561A-BA77-4F19-A827-DD98597F2BDB",
+                                    "attributeGuid": "C0096208-A496-44A8-A6B2-C25A2CFF2CB4",
                                     "attributeName": "accel.x",
                                     "checked": "false",
                                     "dataType": "DECIMAL",
-                                    "attributeLatestValue": "0.1408691",
-                                    "deviceUpdatedDate": "2024-08-06T01:52:42.997Z",
+                                    "attributeLatestValue": "-0.0056152",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
                                     "gatewayUpdatedDate": "NA",
-                                    "attributeValue": "0.1408691"
+                                    "attributeValue": "-0.0056152"
+                                },
+                                {
+                                    "attributeGuid": "0129DE05-4E5F-4D9C-B07F-FEB5B353EAFE",
+                                    "attributeName": "accel.z",
+                                    "checked": "false",
+                                    "dataType": "DECIMAL",
+                                    "attributeLatestValue": "0.3637695",
+                                    "deviceUpdatedDate": "2024-08-29T18:21:50.983Z",
+                                    "gatewayUpdatedDate": "NA",
+                                    "attributeValue": "0.3637695"
                                 }
                             ]
                         },
@@ -1028,9 +762,9 @@
                 }
             },
             "properties": {
-                "x": "10",
-                "y": "18",
-                "w": "10",
+                "x": "25",
+                "y": "21",
+                "w": "11",
                 "h": "4",
                 "i": "Live",
                 "minW": "7",
@@ -1040,34 +774,60 @@
             }
         },
         {
-            "widgetGuid": "E413CDFD-54EB-465E-BA97-CE610867E440",
+            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
             "widgetProperties": {
-                "i": "DeviceCommand",
-                "background": "#dfe0e1",
-                "fontColor": "#000000",
+                "i": "HyperLink",
+                "background": "#ec1840",
+                "fontColor": "#ffffff",
                 "fontFamily": "Proxima Nova",
-                "fontSize": "18",
-                "title": "Device Commands",
-                "titleAlign": "",
+                "fontSize": "24",
+                "title": "Github Repo",
+                "titleAlign": "center",
                 "contents": {
-                    "deviceCommand": {
-                        "template": "49D03294-224F-4095-8969-ECFE6A6E6A92",
-                        "device": "psoc6-imu-f5af350e",
-                        "key": "deviceCommand",
-                        "deviceGuid": "6715D5F7-315A-42B7-BB6E-89E29C8D36A5"
+                    "hyperlink": {
+                        "link": "https://github.com/avnet-iotconnect/avnet-iotc-mtb-ai-imu-example",
+                        "key": "hyperlink"
                     }
                 }
             },
             "properties": {
-                "x": "20",
-                "y": "18",
-                "w": "27",
-                "h": "10",
-                "i": "DeviceCommand",
-                "minW": "22",
-                "minH": "10",
-                "maxH": "20",
-                "maxW": "35",
+                "x": "36",
+                "y": "21",
+                "w": "11",
+                "h": "2",
+                "i": "HyperLink",
+                "minW": "5",
+                "minH": "2",
+                "maxH": "2",
+                "isStatic": "false"
+            }
+        },
+        {
+            "widgetGuid": "57E7E7D3-DE04-4CE3-84C3-63D9CC473F75",
+            "widgetProperties": {
+                "i": "HyperLink",
+                "background": "#ec1840",
+                "fontColor": "#ffffff",
+                "fontFamily": "Proxima Nova",
+                "fontSize": "24",
+                "title": "Avnet IoTConnect",
+                "titleAlign": "center",
+                "contents": {
+                    "hyperlink": {
+                        "link": "https://www.iotconnect.io",
+                        "key": "hyperlink"
+                    }
+                }
+            },
+            "properties": {
+                "x": "36",
+                "y": "23",
+                "w": "11",
+                "h": "2",
+                "i": "HyperLink",
+                "minW": "5",
+                "minH": "2",
+                "maxH": "2",
                 "isStatic": "false"
             }
         }
