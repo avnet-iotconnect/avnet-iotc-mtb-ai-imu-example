@@ -163,9 +163,7 @@ An IoTConnect *Device Template* will need to be created or imported. This define
 
 ## 13. Create/Import a Dashboard
 The data can be visualized by using the Dynamic Dashboard feature of IoTConnect.  
-A preconfigured example dashboard is available here: [Dashboard_JSON_for_Import](files/imu-dashboard-export.json?raw=1) (**must** Right-Click the link, Save As) files/psoc6aibm-example-dashboard.json?raw=1
-A preconfigured example dashboard is available here: [Dashboard_JSON_for_Import](files/imu-dashboard-export.zip?raw=1) (**must** Right-Click the link, Save As) files/psoc6aibm-example-dashboard.json?raw=1
-
+A preconfigured example dashboard is available here: [Dashboard_JSON_for_Import](files/imu-dashboard-export.json?raw=1) (**must** Right-Click the link, Save As) 
 * **Download** the template then select "Create Dashboard" from the top of the IoTConnect portal
 * **Select** the "Import Dashboard" option and **Select** the *Template* and *Device Name* used previously 
 * **Input** a name and complete the import
