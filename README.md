@@ -11,11 +11,9 @@ To quickly evaluate this project without compiling code follow the step-by-step 
 
 * GNU Arm® Embedded Compiler (GCC_ARM) - Default value of TOOLCHAIN
 
-The project has been tested with the Eclipse option in Project Creator.
-
 ## Supported Boards
 
-The code has been developed and tested with MTB 3.2 and the boards below:
+The code has been developed and tested with MTB 3.2, with Eclipse, and the boards below:
 
 - [PSoC&trade; 6 CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)(`CY8CKIT-062S2-AI`)
 
