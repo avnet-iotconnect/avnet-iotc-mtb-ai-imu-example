@@ -67,7 +67,7 @@
 #include "app_task.h"
 
 
-#define APP_VERSION "03.00.00"
+#define APP_VERSION "03.00.01"
 
 typedef enum UserInputYnStatus {
 	APP_INPUT_NONE = 0,
@@ -88,7 +88,7 @@ static TaskHandle_t model_task_handle = NULL;
 // for sake of simplicity, we will not be synchronizing tasks to solve for this issues.
 mtb_imu_t motion_sensor;
 static const char* LABELS[IMAI_DATA_OUT_COUNT] = IMAI_SYMBOL_MAP;
-static const char* highest_confidence_label = 0;
+static const char* highest_confidence_label = NULL;
 static float highest_confidence_value = 0;
 static mtb_imu_data_t imu_data; // file scope so we can share last readout with telemetry
 
@@ -534,9 +534,11 @@ void app_task(void *pvParameters) {
         }
         int max_messages = is_demo_mode ? 6000 : 300;
         for (int j = 0; iotconnect_sdk_is_connected() && j < max_messages; j++) {
-            cy_rslt_t result = publish_telemetry();
-            if (result != CY_RSLT_SUCCESS) {
-                break;
+            if (highest_confidence_label) { // may not be initialized yet
+                cy_rslt_t result = publish_telemetry();
+                if (result != CY_RSLT_SUCCESS) {
+                    break;
+                }
             }
             iotconnect_sdk_poll_inbound_mq(1000);
         }
@@ -545,6 +547,12 @@ void app_task(void *pvParameters) {
     iotconnect_sdk_deinit();
 
     printf("\nAppTask Done.\n");
+
+    if (model_task_handle) {
+       vTaskDelete(model_task_handle);
+       model_task_handle = NULL;
+    }
+
     while (1) {
         taskYIELD();
     }
@@ -552,6 +560,10 @@ void app_task(void *pvParameters) {
 
     exit_cleanup:
     printf("\nError encountered. AppTask Done.\n");
+    if (model_task_handle) {
+       vTaskDelete(model_task_handle);
+       model_task_handle = NULL;
+    }
     while (1) {
         taskYIELD();
     }

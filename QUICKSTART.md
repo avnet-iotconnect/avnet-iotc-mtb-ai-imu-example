@@ -16,11 +16,11 @@ This guide has been tested with the following environment:
 ## 4. Flash the Firmware
 * **Download** and **Install** the latest (tested with v5.2) [ModusToolbox Programming Tools](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.modustoolboxprogtools) (Right-Click, "Open link in new tab")
 * **Download** and **unzip** the pre-compiled firmware:
-    [avnet-iotc-mtb-ai-imu-example-v3.0.0.hex.zip](https://saleshosted.z13.web.core.windows.net/sdk/infineon/avnet-iotc-mtb-ai-imu-example-v3.0.0.hex.zip)
+    [avnet-iotc-mtb-ai-imu-example-v3.0.1.hex.zip](https://saleshosted.z13.web.core.windows.net/sdk/infineon/avnet-iotc-mtb-ai-imu-example-v3.0.1.hex.zip)
 * Launch the **ModusToolbox Programmer** software and update the firmware if prompted
 * Next to the **Programmer** drop-down, ensure the item beginning with **KitProg3** is selected
 * Click the dropdown box next to **Board** and select the **CY8CKIT-062S2-AI** board.
-* Click **Open** and select the firmware .hex file downloaded (`avnet-iotc-mtb-ai-imu-example-v3.0.0.hex`)
+* Click **Open** and select the firmware .hex file downloaded (`avnet-iotc-mtb-ai-imu-example-v3.0.1.hex`)
 * Click **Connect**
 * Click **Program**
 * Wait for the "Device programmed successfully" message to appear at the bottom
