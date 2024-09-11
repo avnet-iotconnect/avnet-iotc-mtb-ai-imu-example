@@ -14,9 +14,11 @@ To quickly evaluate this project without compiling code follow the step-by-step 
 The project has been tested with the Eclipse option in Project Creator.
 
 ## Supported Boards
+
 The code has been developed and tested with MTB 3.2 and the boards below:
+
 - [PSoC&trade; 6 CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)(`CY8CKIT-062S2-AI`)
-- 
+
 ## Building the Project
 
 [Watch an overview video](https://saleshosted.z13.web.core.windows.net/media/ifx/videos/IFX%20Modus%20with%20IoTConnect.mp4) of creating a new project with IoTConnect in ModusToolbox&trade; then follow the steps below.
