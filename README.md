@@ -3,13 +3,20 @@
 This demo project is the integration of  
 Infineon's [Machine learning: Imagimob model deployment](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/release-v1.1.0) and Avnet's [IoTConnect Modus Toolbox&trade; Basic Sample](https://github.com/avnet-iotconnect/avnet-iotc-mtb-basic-example/tree/release-v6.0.0). It demonstrates the Human Activity Detection AI algorithm by Imagimob and reports the result of the recognized class to IoTConnect.
 
-This project currently supports the [CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
-The project supports only Eclipse with GCC_ARM compiler.
-
 ## QuickStart Guide
 
 To quickly evaluate this project without compiling code follow the step-by-step instructions in the [QuickStart Guide](QUICKSTART.md).
 
+## Supported Toolchains (make variable 'TOOLCHAIN')
+
+* GNU Arm® Embedded Compiler (GCC_ARM) - Default value of TOOLCHAIN
+
+The project has been tested with the Eclipse option in Project Creator.
+
+## Supported Boards
+The code has been developed and tested with MTB 3.2 and the boards below:
+- [PSoC&trade; 6 CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)(`CY8CKIT-062S2-AI`)
+- 
 ## Building the Project
 
 [Watch an overview video](https://saleshosted.z13.web.core.windows.net/media/ifx/videos/IFX%20Modus%20with%20IoTConnect.mp4) of creating a new project with IoTConnect in ModusToolbox&trade; then follow the steps below.
