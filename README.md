@@ -13,7 +13,7 @@ To quickly evaluate this project without compiling code follow the step-by-step 
 
 ## Supported Boards
 
-The code has been developed and tested with MTB 3.2, with Eclipse, and the boards below:
+The code has been developed and tested with MTB 3.3, with VsCode, and the board below:
 
 - [PSoC&trade; 6 CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)(`CY8CKIT-062S2-AI`)
 
