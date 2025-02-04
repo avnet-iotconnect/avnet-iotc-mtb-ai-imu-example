@@ -39,7 +39,7 @@ Infineon [Machine learning: Imagimob model deployment](https://github.com/Infine
 README file. We recommend to plug the board into a battery pack while testing.
 
 The application sends data once every second, but the AI model recognizes human activity several times per second. If at the time of reporting data to IoTConnect, the activity is not recognized, he **class** value will be reported as **unlabelled**.
-If the activity is reconginized, the **class** value will be reported as one of the following:
+If the activity is recognized, the **class** value will be reported as one of the following:
 * sitting
 * standing
 * walking
