@@ -13,7 +13,7 @@ To quickly evaluate this project without compiling code follow the step-by-step 
 
 ## Supported Boards
 
-The code has been developed and tested with MTB 3.2, with Eclipse, and the boards below:
+The code has been developed and tested with MTB 3.3, with VsCode, and the board below:
 
 - [PSoC&trade; 6 CY8CKIT-062S2-AI](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)(`CY8CKIT-062S2-AI`)
 
@@ -39,7 +39,7 @@ Infineon [Machine learning: Imagimob model deployment](https://github.com/Infine
 README file. We recommend to plug the board into a battery pack while testing.
 
 The application sends data once every second, but the AI model recognizes human activity several times per second. If at the time of reporting data to IoTConnect, the activity is not recognized, he **class** value will be reported as **unlabelled**.
-If the activity is reconginized, the **class** value will be reported as one of the following:
+If the activity is recognized, the **class** value will be reported as one of the following:
 * sitting
 * standing
 * walking
