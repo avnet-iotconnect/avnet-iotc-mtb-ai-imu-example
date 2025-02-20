@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: nikmarkovicavnet/iotc-mtb-build:01.00
+      image: nikmarkovicavnet/iotc-mtb-build:02.00
       credentials:
         username: nikmarkovicavnet
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
